@@ -4,7 +4,7 @@ import chalk from "chalk";
 export const sum = (a, b) => a + b;
 
 const word = generate();
-const word2 = generate();
+
 
 console.log(
   `Hello!!! 
