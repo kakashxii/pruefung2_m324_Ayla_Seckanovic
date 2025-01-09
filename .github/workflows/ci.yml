@@ -7,15 +7,15 @@ on:
 
 jobs:
   lint-format-test:
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v14
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18.x'
+          node-version: "18.x"
 
       - name: Install dependencies
         run: npm install
@@ -28,3 +28,14 @@ jobs:
 
       - name: Run tests
         run: npm test
+
+  markdown-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Markdown Lint
+        uses: github/super-linter@v4
+        env:
+          VALIDATE_MARKDOWN: true
